@@ -1,17 +1,17 @@
 {
   "name": "react-javascript",
   "version": "1.0.0",
-  "homepage": "https://github.com/hossamYNWA/bytezone",
+  "homepage": "https://github.com/hossamYNWA/ByteZone",
   "type": "module",
   "description": "React TypeScript on Replit, using Vite bundler",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "preview": "vite preview",
+    "predeploy" : "npm run build",
+      "deploy" : "gh-pages -d dist",
+    "preview": "vite preview"
   },
-  "keywords": [],
+  "keywords": "[]",
   "author": "",
   "license": "ISC",
   "devDependencies": {
