@@ -1,0 +1,17 @@
+.favs-container {
+    margin: 150px auto;
+    text-align: center;
+}
+
+.favs-container h2 {
+  font-size: 2rem;
+    margin:20px auto;
+}
+
+.favs-content {
+  width: 85vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

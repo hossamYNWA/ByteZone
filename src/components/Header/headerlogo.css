@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.slogan {
+    width: 85%;
+    margin: auto;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.slogan > img {
+        display: inline-block;
+        min-width: 50%;
+        margin: auto;
+    
+}
+
+.slogan p {
+    width: 500px;
+      font-family: "Quicksand", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: bold;
+      font-style: normal;
+    color:var(--secondary-color);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin: auto;
+}

@@ -1,0 +1,41 @@
+form {
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 500px;
+    margin: 100px auto;
+    }
+
+button[type="submit"]{
+    background-color: var(--primary-color);
+    margin: 10px auto;
+    transition: 0.3s;
+    height: 45px;
+    width: 200px;
+    border-radius: 5px;
+    color: var(--tertiary-color);
+    font-size: 1.1rem;
+}
+
+button[type="submit"]:hover{
+    transform: scaleX(0.97);
+    opacity:1;
+}
+
+input.log_input {
+    width: calc(100% - 105px);
+    margin: 8px;
+    padding: 20px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 1rem;
+    outline: 1px solid var(--primary-color);
+    color: var(--primary-color)
+}
+
+.log_input:focus {
+    outline: 1px solid var(--secondary-color);
+}

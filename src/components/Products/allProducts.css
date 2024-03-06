@@ -1,0 +1,18 @@
+.all-products {
+    margin: 150px auto;
+      position: relative;
+      z-index: 2;
+}
+.all-products h2{
+    text-align: center;
+    margin: 40px auto;
+    font-size: 2rem;
+}
+.all-products .content{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

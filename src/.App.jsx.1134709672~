@@ -1,0 +1,25 @@
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import Header from "./components/Header/Header";
+import AllProducts from "./components/Products/AllProducts";
+import Logi
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <main>
+              <NavBar />
+              <Header />
+              <AllProducts />
+            </main>
+          }
+        />
+          <Route path="/login" element={<Login/>}
+      </Routes>
+    </Router>
+  );
+}
