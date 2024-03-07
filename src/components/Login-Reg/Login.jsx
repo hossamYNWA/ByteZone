@@ -24,8 +24,6 @@ export default function Login() {
     }
   };
   return (
-    <>
-      <NavBar />
       <form>
         <input
           ref={userRef}
@@ -50,6 +48,5 @@ export default function Login() {
           <p className="errortext">you entered wrong username or password</p>
         )}
       </form>
-    </>
   );
 }

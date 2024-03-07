@@ -35,7 +35,7 @@ const lapsImages = [
   "https://m.media-amazon.com/images/I/71MmRJDlubL.jpg",
   "https://m.media-amazon.com/images/I/61vFO3R5UNL._AC_UF894,1000_QL80_.jpg",
 ];
-export default function Favs({ favIds, qnty }) {
+export default function Favs({ favIds }) {
   console.log("qty " + qnty);
 
   const [favedLaps, setLaptops] = useState([]);
@@ -101,7 +101,6 @@ export default function Favs({ favIds, qnty }) {
   });
   return (
     <div className="favs-container">
-      <NavBar qty={qnty} favs={favIds.length} />
       <h2>Your Favourite List</h2>
       <div className="favs-content">{content}</div>
     </div>

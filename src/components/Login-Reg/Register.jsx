@@ -21,8 +21,6 @@ export default function Register() {
     navigate("/");
   };
   return (
-    <>
-      <NavBar />
       <form action="POST">
         <input
           ref={nameRef}
@@ -66,6 +64,5 @@ export default function Register() {
           </span>
         </div>
       </form>
-    </>
   );
 }

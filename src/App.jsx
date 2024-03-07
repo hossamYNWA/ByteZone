@@ -6,7 +6,7 @@ import Login from "./components/Login-Reg/Login";
 import Register from "./components/Login-Reg/Register";
 import Favs from "./components/Favs/Favs";
 import { useState, useReducer } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function favsReducer(state, action) {
   if (action.type === "ADD") {
@@ -36,12 +36,12 @@ export default function App() {
   };
   return (
     <Router>
+    <NavBar qty={cartItems.length} favs={favs.length} />
       <Routes>
         <Route
           path="/"
           element={
             <main>
-              <NavBar qty={cartItems.length} favs={favs.length} />
               <Header />
               <AllProducts
                 removeFav={favRemoveHandler}
