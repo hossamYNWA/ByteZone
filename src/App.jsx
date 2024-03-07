@@ -51,6 +51,7 @@ export default function App() {
                 removeFav={favRemoveHandler}
                 manageFavs={favsHandler}
                 addToCart={qtyHandler}
+                logState={logged}
               />
             </main>
           }

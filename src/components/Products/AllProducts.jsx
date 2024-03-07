@@ -34,7 +34,7 @@ const lapsImages = [
   "https://m.media-amazon.com/images/I/61vFO3R5UNL._AC_UF894,1000_QL80_.jpg",
 ];
 let laptops = []
-export default function AllProducts({ addToCart, manageFavs, removeFav }) {
+export default function AllProducts({ addToCart, manageFavs, removeFav,logState }) {
     const addItemToCart = (i) => {
         console.log(i)
         addToCart(i);
@@ -85,7 +85,7 @@ export default function AllProducts({ addToCart, manageFavs, removeFav }) {
   const content = products.map((product) => {
     return (
       <ProductCard
-          addHandler={addItemToCart}
+          addHandler={addItemToCart} logged={logState}
         favsRemoveHandler={removeFavItem}
         items={products}
           favsAddHandler={favsAdd}
@@ -112,5 +112,3 @@ export default function AllProducts({ addToCart, manageFavs, removeFav }) {
     </div>
   );
 }
-
-export {laptops}
