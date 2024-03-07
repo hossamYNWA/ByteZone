@@ -11,10 +11,12 @@
     --secondary-color:#3cc2b1;
     --tertiary-color:#f1fdfc;
     width: 100vw;
-      overflow-x: hidden;
+    overflow-x: hidden;
     font-family: "Quicksand", sans-serif;
 }
 
 body {
-    background-color:var(--tertiary-color)
+    background-color:var(--tertiary-color);
+    width:100vw;
+    overflow-x: hidden;
 }
