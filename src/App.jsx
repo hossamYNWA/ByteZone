@@ -19,6 +19,10 @@ function favsReducer(state, action) {
   }
 }
 export default function App() {
+    const [logged,setLogged] = useState(false);
+    const logUser = () => {
+        setLogged(true);
+    }
   const [cartItems, setCart] = useState([]);
   const qtyHandler = (i) => {
     console.log(i);
@@ -36,7 +40,7 @@ export default function App() {
   };
   return (
     <Router>
-    <NavBar qty={cartItems.length} favs={favs.length} />
+    <NavBar loggedIn={logged} qty={cartItems.length} favs={favs.length} />
       <Routes>
         <Route
           path="/"
@@ -51,7 +55,7 @@ export default function App() {
             </main>
           }
         />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login logHandler = {logUser}/>} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/favs"

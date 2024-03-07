@@ -3,7 +3,6 @@ import NavBar from "../NavBar/NavBar";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 export default function Register() {
-  // const [userData, setUserData] = useState({});
   const navigate = useNavigate();
   const nameRef = useRef();
   const mailRef = useRef();
@@ -18,7 +17,7 @@ export default function Register() {
     const password = passwordRef.current.value;
     const userData = { name, mail, username, password };
     localStorage.setItem(username, JSON.stringify(userData));
-    navigate("/");
+    navigate("/login");
   };
   return (
       <form action="POST">

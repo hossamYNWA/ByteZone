@@ -3,15 +3,15 @@ import BuyOption from "./BuyOption";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { TiArrowBack } from "react-icons/ti";
-import { useState } from "react";
+import { useState, memo } from "react";
 import ReactCardFlip from "react-card-flip";
-export default function ProductCard({
+function ProductCard({
   addHandler,
-    inFavs,
+  inFavs,
   favsAddHandler,
   items,
   favsRemoveHandler,
-    index,
+  index,
   image,
   title,
   price,
@@ -27,21 +27,20 @@ export default function ProductCard({
     setIsFlipped(!isFlipped);
   };
   const buyHandler = () => {
-      alert("Payment completed succefully!")
+    alert("Payment completed succefully!");
   };
   const cartHandler = () => {
     addHandler(index);
   };
   const favHandler = () => {
     if (isLiked) {
-        favsRemoveHandler(index);
-        console.log("disliked")
-      
+      favsRemoveHandler(index);
+      console.log("disliked");
     } else {
-        console.log("liked")
-        favsAddHandler(index);
+      console.log("liked");
+      favsAddHandler(index);
     }
-      setIsLiked(!isLiked);
+    setIsLiked(!isLiked);
   };
   return (
     <div className="product-card">
@@ -61,7 +60,7 @@ export default function ProductCard({
               specifications
             </button>
             <p>{price}$</p>
-            {loggedIn&&!inFavs && (
+            {loggedIn && !inFavs && (
               <div className="buy-options">
                 <BuyOption clickHandler={buyHandler} content="Buy Now" />
                 <BuyOption clickHandler={cartHandler} content="Add To Cart" />
@@ -99,3 +98,5 @@ export default function ProductCard({
     </div>
   );
 }
+
+export default memo(ProductCard);

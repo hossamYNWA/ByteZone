@@ -2,7 +2,7 @@ import NavBar from "../NavBar/NavBar";
 import "./login.css";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-export default function Login() {
+export default function Login({logHandler}) {
   const [userExist, setUserExist] = useState(true);
   const navigate = useNavigate();
   const passwordRef = useRef();
@@ -16,7 +16,7 @@ export default function Login() {
     } else {
       const userData = JSON.parse(localStorage.getItem(username));
       if (userData.password === password) {
-        localStorage.setItem("loggedIn", true);
+        logHandler()
         navigate("/");
       } else {
         setUserExist(false);

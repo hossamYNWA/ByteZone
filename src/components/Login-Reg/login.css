@@ -6,6 +6,7 @@ form {
     align-items: center;
     width: 100%;
     margin: 100px auto;
+    max-width:600px
     }
 
 button[type="submit"]{
@@ -38,4 +39,8 @@ input.log_input {
 
 .log_input:focus {
     outline: 1px solid var(--secondary-color);
+}
+
+.errortext {
+    color:#dd0000
 }
