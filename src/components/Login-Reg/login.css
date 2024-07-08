@@ -1,5 +1,5 @@
 form {
-    height: 430px;
+    min-height: 270px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

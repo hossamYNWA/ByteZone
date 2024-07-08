@@ -72,10 +72,11 @@
 }
 .product-card .back h4{
     color: var(--primary-color);
-      font-size: 1.3rem;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgb(48, 109, 83,0.15);
+    text-align:center;
 }
 .product-card .back p{
-font-size:1.1rem;
+font-size:0.8rem;
     text-align:left;
 }
 .product-card .back span{

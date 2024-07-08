@@ -11,17 +11,29 @@ function ProductCard({
     inFavs,
     favsAddHandler,
     favsRemoveHandler,
-    index,
-    image,
-    title,
-    price,
-    cpu,
-    ram,
-    graphics,
-    hard,
+    product,img
 }) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
+    const title = product.brand!==product.name? product.brand + " " + product.name: product.name;
+    const frontKeys = ["brand", "name", "price", 'id',"image"];
+    //excluding the front data from the whole product data
+    const specs = Object.keys(product)
+        .filter((key) => !frontKeys.includes(key))
+        .reduce((obj, k) => {
+            obj[k] = product[k];
+            return obj;
+        }, {});
+    const backContent = Object.keys(specs).map((key) => {
+        const spec = key.replace("_", " ")
+        return (
+            <p>
+                <span>{spec}</span>
+                : {specs[key]}
+            </p>
+        );
+    });
+
     const flipCard = () => {
         setIsFlipped(!isFlipped);
     };
@@ -51,14 +63,14 @@ function ProductCard({
             >
                 <div className="front">
                     <div className="product-image">
-                        <img src={image} alt="product-image" />
+                        <img src={img} alt="product-image" />
                     </div>
                     <div className="details">
                         <h4>{title}</h4>
                         <button className="specs" onClick={flipCard}>
                             specifications
                         </button>
-                        <p>{price}$</p>
+                        <p>{product.price}$</p>
                         {logged && !inFavs && (
                             <div className="buy-options">
                                 <BuyOption
@@ -81,7 +93,8 @@ function ProductCard({
                 </div>
                 <div className="back">
                     <h4>{title}</h4>
-                    <p>
+                    {backContent}
+                    {/* <p>
                         <span>CPU:</span>
                         {cpu}
                     </p>
@@ -94,9 +107,9 @@ function ProductCard({
                         {graphics}
                     </p>
                     <p>
-                        <span>Hard Drive:</span>
-                        {hard}
-                    </p>
+                        <span></span>
+                        
+                    </p> */}
                     <button className="specs" onClick={flipCard}>
                         <TiArrowBack />
                     </button>

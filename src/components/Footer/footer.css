@@ -1,0 +1,65 @@
+footer {
+    width: 100%;
+    height: fit-content;
+    background-color: #2f2929;
+    color: whitesmoke;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 20px 10px 20px;
+    flex-wrap: wrap;
+}
+
+
+footer .container div h5 {
+    text-transform: capitalize;
+    color: var(--secondary-color);
+    margin: 10px auto;
+}
+
+footer .container div ul {
+    list-style: none;
+    text-align: center;
+}
+
+footer .container div ul i {
+    font-size: 1rem;
+    transition: 0.6s;
+    color: whitesmoke;
+}
+
+footer .container div ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: capitalize;
+    font-size:0.8rem;
+    transition: 0.3s;
+}
+
+footer .copyrts p {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: lighter;
+    border-top: none;
+    border-bottom: none;
+    padding-bottom:5px;
+    color: var(--secondary-color);
+}
+
+.social a {
+    font-size:1.3rem !important;
+    display:block;margin:4px
+}
+footer .fb:hover {
+    color: #1877F2
+}
+
+footer .x:hover {
+    color: black
+}
+
+footer .wb:hover {
+    color: #25D366;
+}

@@ -5,6 +5,7 @@ import AllProducts from "./components/Products/AllProducts";
 import Login from "./components/Login-Reg/Login";
 import Register from "./components/Login-Reg/Register";
 import Favs from "./components/Favs/Favs";
+import Footer from "./components/Footer/Footer";
 import { useState, useReducer } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -63,6 +64,7 @@ export default function App() {
           element={<Favs qnty={cartItems.length} favIds={favs} />}
         />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
