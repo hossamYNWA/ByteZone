@@ -11,12 +11,16 @@ function ProductCard({
     inFavs,
     favsAddHandler,
     favsRemoveHandler,
-    product,img
+    product,
+    img,
 }) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
-    const title = product.brand!==product.name? product.brand + " " + product.name: product.name;
-    const frontKeys = ["brand", "name", "price", 'id',"image"];
+    const title =
+        product.brand !== product.name
+            ? product.brand + " " + product.name
+            : product.name;
+    const frontKeys = ["brand", "name", "price", "id", "image"];
     //excluding the front data from the whole product data
     const specs = Object.keys(product)
         .filter((key) => !frontKeys.includes(key))
@@ -25,11 +29,11 @@ function ProductCard({
             return obj;
         }, {});
     const backContent = Object.keys(specs).map((key) => {
-        const spec = key.replace("_", " ")
+        const spec = key.replace("_", " ");
         return (
-            <p>
-                <span>{spec}</span>
-                : {specs[key]}
+            <p key={Math.floor(Math.random() * Math.random() * 1000)}>
+                <span key={Math.floor(Math.random() * 1000)}>{spec}</span>:{" "}
+                {specs[key]}
             </p>
         );
     });
@@ -41,15 +45,15 @@ function ProductCard({
         alert("Payment completed succefully!");
     };
     const cartHandler = () => {
-        addHandler(index);
+        addHandler(product.id);
     };
     const favHandler = () => {
         if (isLiked) {
-            favsRemoveHandler(index);
+            favsRemoveHandler(product.id);
             console.log("disliked");
         } else {
             console.log("liked");
-            favsAddHandler(index);
+            favsAddHandler(product.id);
         }
         setIsLiked(!isLiked);
     };
