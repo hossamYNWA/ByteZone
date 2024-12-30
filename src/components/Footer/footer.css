@@ -3,6 +3,8 @@ footer {
     height: fit-content;
     background-color: #2f2929;
     color: whitesmoke;
+    position: absolute;
+    bottom: 0;
 }
 
 footer .container {
@@ -10,6 +12,7 @@ footer .container {
     justify-content: space-evenly;
     padding: 20px 20px 10px 20px;
     flex-wrap: wrap;
+
 }
 
 

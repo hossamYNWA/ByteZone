@@ -2,7 +2,9 @@
     margin: 150px auto;
       position: relative;
       z-index: 2;
+      min-height: 500px;
 }
+
 .all-products h2{
     text-align: center;
     margin: 40px auto;

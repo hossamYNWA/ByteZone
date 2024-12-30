@@ -71,25 +71,18 @@ export default function AllProducts({
     removeFav(i);
   };
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    async function dataHandler() {
-      const url = "https://freetestapi.com/api/v1/products";
-      const options = {
-        method: "GET",
-      };
 
-      try {
-        const response = await fetch(url, options);
-        const result = await response.text();
-        const data = JSON.parse(result);
-        setProducts(data);
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    dataHandler();
+  useEffect(() => {
+      fetch('https://www.freetestapi.com/api/v1/products')
+      .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.json();
+      })
+      .then(data => setProducts(data))
+      .catch(error => console.error('Error:', error));
   }, []);
+
+
   const content = products.map((product, i) => {
     return (
       <ProductCard
@@ -98,7 +91,7 @@ export default function AllProducts({
         favsRemoveHandler={removeFavItem}
         items={products}
         favsAddHandler={favsAdd}
-        key={i}
+        key={`${product.id}-${i}`} // Combination of id and index
         product={product}
         img={productsImages[i]}
       />
